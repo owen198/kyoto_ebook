@@ -1,0 +1,42 @@
+LA@ICCE2018 Dataset Description:
+---
+The data in this dataset was collected from two different courses: a course that consisted of one intensive lecture, and a course that spanned three lectures. For each of these courses there are two main types of files included in this dataset: clickstream and score.
+The details of the file columns are described below.
+
+data#_clickstream.csv:
+----
+userid		Anonymized student userid, eg: ds1001
+action		xAPI verb for the action that the student performed, eg: https://w3id.org/xapi/adb/verbs/read
+operationname	The action that was done, eg:
+		    OPEN : opened the book
+		    CLOSE : closed the book
+		    NEXT : went to the next page
+		    PREV : went to the previous page
+		    PAGE_JUMP : jumped to a particular page
+		    ADD BOOKMARK : added a bookmark to current page
+		    ADD MARKER : added a marker to current page
+		    ADD MEMO : added a memo to current page
+		    CHANGE MEMO : edited an existing memo
+		    DELETE BOOKMARK : deleted a bookmark on current page
+		    DELETE MARKER : deleted a marker on current page
+		    DELETE_MEMO : deleted a memo on current page
+		    LINK_CLICK : clicked a link contained in the e-book current page
+		    SEARCH : searched for something within the e-book
+		    SEARCH_JUMP : jumped to a page from the search results
+markercolor	color of the marker added to a page, eg:
+		    rgb(255,0,0) : contents are important 
+		    rgb(255,255,0) : contents are not understood
+processcode	grouping of event logs by event type
+devicecode	type of device used to view BookRoll, eg: mobile, pc
+markerposition	the position (x,y,w,h,onscreen w,onscreen h) of the marker added to a page, eg: 367,34,28,20,714,504
+markertext	the text contained on the page where the marker was drawn
+description	operationname = PAGE_JUMP | SEARCH_JUMP: the page the user moved to
+pageno		the current page where the action was performed
+contentsid	the id of the e-book that is being read
+memotext	the text contained in the memo
+eventtime	the timestamp of when the event occurred
+
+data#_score.csv
+----
+userid		Anonymized student userid, eg: ds1001
+score		The final score that the student received for the course (this is the prediction target value), eg: 80
